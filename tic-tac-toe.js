@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var noWin = true;
     var count = 1;
     var squaresArray = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-    
+     
     
      
      // Layout Board
@@ -45,6 +45,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 
     
+    // Changes Style when Mouse Hovering
+        squares.addEventListener("mouseover", () => {
+                squares.classList.add("hover");
+            });
+
+        squares.addEventListener("mouseout", function () {
+                squares.classList.remove("hover");
+            });
+
+
+
+
+
+
     }
             
      

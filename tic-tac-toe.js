@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var noWin = true;
     var count = 1;
     var squaresArray = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    var restartButton = document.querySelector(".btn")
      
     
      
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     squares.addEventListener("click", function() {
         if (squares.textContent== "" && noWin == true ) {
 
-            if (count % 2 == 0) {
+            if (count % 2 == 0 ) {
                 squares.textContent = "O";
                 squares.classList.add("square", "O");
                 squaresArray[s] = "O";
@@ -58,16 +59,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
 
 
-    
-        
-            
 
-
-
-    }
-            
-     // Check For  Winner
-     function winnerCheck (playerTurn,squaresArray){
+    // Check For  Winner
+    function winnerCheck (playerTurn,squaresArray){
         for (let i = 0; i < WinningTiles.length; i++) {
             var winningRow = WinningTiles[i];
             var r1 = winningRow[0];
@@ -84,15 +78,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
         return false;
     
     }
-    
 
 
+    //Restart Game
+    restartButton.addEventListener("click", function() {
+        squares.textContent = "";
+        squares.classList.remove("O");
+        squares.classList.remove("X");
+        squares.textContent = "";
+        count = 1;
+        squaresArray = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        playerTurn.textContent = ("Move your mouse over a square and click to play an X or an O.")
+        noWin = true;
+       
+    });
 
 
-      
-     
-
-
+    }
+            
+ 
 });
 
 
